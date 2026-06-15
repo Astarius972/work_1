@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+const notoSans = Noto_Sans({
+  variable: "--font-noto",
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Tsaagan Delgerekh Orgo LLC | Worker Camp Services",
+  title: "Цагаан дэлгэрэх өргөө ХХК | Ажилчдын хотхон",
   description:
-    "Full-service worker camp operations in Mongolia — accommodation, catering, utilities, and facility management for mining and industrial projects.",
+    "Цагаан дэлгэрэх өргөө ххк — Ажилчдын хотхоны танилцуулга. Цагаан хад 2026.",
 };
 
 export default function RootLayout({
@@ -19,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-foreground">
+    <html lang="mn" className={`${notoSans.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col bg-background text-foreground">
         {children}
       </body>
     </html>
